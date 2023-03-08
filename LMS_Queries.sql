@@ -41,7 +41,7 @@ Join Loans L on M.Id = L.Members_Id
 Where Books_Id IN 
 (Select Id from Books Where title = 'Phatoms_of_stone');
 
--- Write a query to display the book code, book title and author of the books whose author name begins with ‘P’.
+-- A query to display the book code, book title and author of the books whose author name begins with ‘P’.
 
 Select 
 Id,
@@ -52,15 +52,14 @@ Where Author Like 'J%';
 
 -- Ans John_Smith, Jade_Joshi
 
--- Write a query to display the total number of Thriller books available in library.
+-- A query to display the total number of Thriller books available in library.
 
 Select 
 Count(Category) AS 'No_of_Thriller_Books'
 From Categories
 Where Category = 'Thriller'; 
 
--- Write a query to display the number of books published by “Prentice Hall” with the alias name “NO_OF_BOOKS”.
-
+-- A query to display the number of books published by “Prentice Hall” with the alias name “NO_OF_BOOKS”.
 Select 
 Title,
 Count(Id) AS 'Published_in_2010'
@@ -68,7 +67,7 @@ From Books
 Where Publication_year = '2010'
 Group by Title, Id;
 
--- Write a query to display the book code, book title of the books which are issued on the date “1st April 2012″.
+-- A query to display the book code, book title of the books which are issued on the date “1st April 2012″.
 
 Select 
 Id,
@@ -95,7 +94,7 @@ Update Members
 Set Date_Registration = '2018-09-08'
 Where id = 4; 
 
--- Display the member_id, member name, date of registration, membership status of members who 
+-- Displaying the member_id, member name, date of registration, membership status of members who 
 -- registered before 2021 and membership status is 'active'.
 
 Select 
@@ -120,7 +119,7 @@ Update members
 set city = 'Seattle'
 where id IN (2,3); 
 
--- Write a query to display the member id, member name who’s City is Seattle. Display the member name in title case with alias name ‘Name’.
+-- A query to display the member id, member name who’s City is Seattle. Display the member name in title case with alias name ‘Name’.
 
 Select 
 iD,
@@ -128,19 +127,19 @@ CONCAT (First_Name,' ', Last_Name)  AS 'Name'
 From members
 Where City = 'Seattle'; 
 
--- Write a query to concatenate book title, author and display in the following format- Book_Title is written_by_Author
+-- A query to concatenate book title, author and display in the following format- Book_Title is written_by_Author
 
 Select 
 Concat (Title, ' ', "is written by", ' ',  Author) As "Book Titles with Author"
 From Books;
 
--- Write a query to display the average price of books with alias name “AVERAGEPRICE”.
+-- A query to display the average price of books with alias name “AVERAGEPRICE”.
 
 Select
 Avg(LoanPrice) AS "Average Price"
 From Loans;
 
--- Write a query to display the member id, member name, city and member status of members with 
+-- A query to display the member id, member name, city and member status of members with 
 -- the total fine paid by them with alias name “Fine”.
 
 Select 
